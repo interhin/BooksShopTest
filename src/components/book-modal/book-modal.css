@@ -1,0 +1,10 @@
+.book-modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.count-of-book span {
+    margin-left: 20px;
+}
