@@ -12,7 +12,7 @@ import ErrorIndicator from '../error-indicator';
 
 import './book-list.css';
 
-const BookList = ({ books, modalOpenned, modalClosed }) => {
+const BookList = ({ books, modalOpenned }) => {
   return (
     <ul className="book-list">
       {

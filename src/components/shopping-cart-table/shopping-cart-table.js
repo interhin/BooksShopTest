@@ -58,7 +58,7 @@ const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) =
       </table>
 
       <div className="total">
-        Сумма: ${total}
+        Сумма: ${total.toFixed(2)}
       </div>
     </div>
   );

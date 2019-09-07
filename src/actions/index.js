@@ -40,7 +40,7 @@ export const allBooksRemovedFromCart = (bookId) => {
   };
 };
 
-const fetchBooks = (bookstoreService, dispatch) => () => {
+export const fetchBooks = (bookstoreService, dispatch) => () => {
   dispatch(booksRequested());
   bookstoreService.getBooks()
     .then((data) => dispatch(booksLoaded(data)))
@@ -66,7 +66,3 @@ export const bookCountChanged = (count) => {
     payload: count
   }
 }
-
-export {
-  fetchBooks
-};
