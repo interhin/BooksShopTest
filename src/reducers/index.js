@@ -4,7 +4,7 @@ const initialState = {
   loading: true,
   error: null,
   cartItems: [],
-  orderTotal: 220,
+  orderTotal: 0,
   isModal: false,
   currentBook: {},
   currentCount: 0

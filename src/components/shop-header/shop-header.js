@@ -6,12 +6,12 @@ const ShopHeader = ({ numItems, total }) => {
   return (
     <header className="shop-header row">
       <Link to="/">
-        <div className="logo text-dark">ReStore</div>
+        <div className="logo text-dark">Books Shop</div>
       </Link>
       <Link to="/cart">
         <div className="shopping-cart">
           <i className="cart-icon fa fa-shopping-cart" />
-          {numItems} items (${total})
+          {numItems} Books (${total})
         </div>
       </Link>
     </header>

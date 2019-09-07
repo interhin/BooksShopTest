@@ -53,7 +53,10 @@ const mapStateToProps = ({ isModal, currentBook, currentCount }) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         modalClosed: () => dispatch(modalClosed()),
-        bookAddedToCart: (id, count) => dispatch(bookAddedToCart(id, count)),
+        bookAddedToCart: (id, count) => {
+            dispatch(bookAddedToCart(id, count));
+            dispatch(modalClosed());
+        },
         bookCountChanged: (count) => dispatch(bookCountChanged(count))
     }
 }

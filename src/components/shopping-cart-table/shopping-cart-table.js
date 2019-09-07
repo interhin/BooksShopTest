@@ -16,7 +16,7 @@ const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) =
         <td>{idx + 1}</td>
         <td>{title}</td>
         <td>{count}</td>
-        <td>${total}</td>
+        <td>${total.toFixed(2)}</td>
         <td>
           <button
             onClick={() => onDelete(id)}
@@ -40,15 +40,15 @@ const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) =
 
   return (
     <div className="shopping-cart-table">
-      <h2>Your Order</h2>
+      <h2>Корзина</h2>
       <table className="table">
         <thead>
           <tr>
             <th>#</th>
-            <th>Item</th>
-            <th>Count</th>
-            <th>Price</th>
-            <th>Action</th>
+            <th>Название</th>
+            <th>Количество</th>
+            <th>Цена</th>
+            <th>Действие</th>
           </tr>
         </thead>
 
@@ -58,7 +58,7 @@ const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) =
       </table>
 
       <div className="total">
-        Total: ${total}
+        Сумма: ${total}
       </div>
     </div>
   );
@@ -71,10 +71,12 @@ const mapStateToProps = ({ cartItems, orderTotal }) => {
   };
 };
 
-const mapDispatchToProps = {
-  onIncrease: bookAddedToCart,
-  onDecrease: bookRemovedFromCart,
-  onDelete: allBooksRemovedFromCart
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onIncrease: (id) => dispatch(bookAddedToCart(id, 1)),
+    onDecrease: (id) => dispatch(bookRemovedFromCart(id)),
+    onDelete: (id) => dispatch(allBooksRemovedFromCart(id))
+  }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCartTable);
